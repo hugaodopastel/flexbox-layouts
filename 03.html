@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flex-box - Página 03</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Menu superior */
+    #menu {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    #menu ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 15px;
+    }
+
+    #menu ul li a {
+      text-decoration: none;
+      background-color: #2e2e2e;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 6px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    #menu ul li a:hover {
+      background-color: #444;
+    }
+
+    /* Ativando o botão 03 */
+    #menu ul li a.active {
+      background-color: #555;
+    }
+
+    #container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    #layout {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .layout03 {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header header"
+        "menu main ads"
+        "footer footer footer";
+      gap: 20px;
+      min-height: 400px;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #bbb;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .conteudo {
+      display: contents; /* para não atrapalhar o grid */
+    }
+
+    nav.menu {
+      grid-area: menu;
+      background-color: #808080;
+      padding: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    nav.menu p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    nav.menu button {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #2e2e2e;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.menu button:hover {
+      background-color: #444;
+    }
+
+    main.main {
+      grid-area: main;
+      background-color: #aaa;
+      padding: 20px;
+    }
+
+    aside.ads {
+      grid-area: ads;
+      background-color: #999;
+      padding: 20px;
+      color: white;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #666;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="menu">
+      <ul>
+        <li class="item"><a href="/index.html">01</a></li>
+        <li class="item"><a href="/02.html">02</a></li>
+        <li class="item"><a href="/03.html" class="active">03</a></li>
+      </ul>
+    </div>
+    <div id="layout">
+      <div class="layout03">
+        <header class="header">Header</header>
+        <div class="conteudo">
+          <nav class="menu">
+            <p>Menu</p>
+            <button>Item 1</button>
+            <button>Item 2</button>
+            <button>Item 3</button>
+          </nav>
+          <main class="main">
+            <h2>Content</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem est provident...</p>
+          </main>
+          <aside class="ads">
+            <h2>Ad</h2>
+            <p>Ad</p>
+          </aside>
+        </div>
+        <footer class="footer">Footer</footer>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

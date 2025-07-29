@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Layout Flexbox - Página 02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav.menu-superior {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav.menu-superior a {
+      text-decoration: none;
+      background-color: #2e2e2e;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 6px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.menu-superior a:hover {
+      background-color: #444;
+    }
+
+    /* Link ativo */
+    nav.menu-superior a.active {
+      background-color: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Removi a coluna-esquerda para o tabuleiro ficar centralizado */
+    /* Vamos fazer o layout simples para o tabuleiro */
+    .layout02 {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Tabuleiro estilo grid 5x5 */
+    .tabuleiro {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      grid-template-rows: repeat(5, 60px);
+      gap: 10px;
+    }
+
+    .bloco {
+      background-color: #666;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    /* Escondendo menu lateral porque aqui não tem (pode ajustar se quiser) */
+    aside.menu-lateral {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="menu-superior">
+    <a href="index.html">01</a>
+    <a href="02.html" class="active">02</a>
+    <a href="03.html">03</a>
+  </nav>
+
+  <div class="container">
+    <div class="layout02">
+      <div class="tabuleiro">
+        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+        <div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div><div class="bloco"></div>
+      </div>
+    </div>
+
+    <aside class="menu-lateral">Menu</aside>
+  </div>
+
+</body>
+</html>

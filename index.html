@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Layout Flexbox</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav.menu-superior {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav.menu-superior a {
+      text-decoration: none;
+      background-color: #2e2e2e;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 6px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.menu-superior a:hover {
+      background-color: #444;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 20px auto;
+      gap: 20px;
+    }
+
+    .coluna-esquerda {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    header.cabecalho {
+      background-color: #bbb;
+      padding: 40px 20px;
+    }
+
+    .artigos {
+      display: flex;
+      gap: 15px;
+    }
+
+    .artigos .artigo {
+      flex: 1;
+      background-color: #aaa;
+      padding: 30px 20px;
+    }
+
+    aside.menu-lateral {
+      flex: 1;
+      background-color: #808080;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    footer.rodape {
+      background-color: #666;
+      padding: 40px 20px;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="menu-superior">
+    <ul>
+        <li class="item"><a href="/index.html">01</a></li>
+        <li class="item"><a href="/02.html">02</a></li>
+        <li class="item"><a href="/03.html">03</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <div class="coluna-esquerda">
+      <header class="cabecalho">Cabeçalho</header>
+
+      <div class="artigos">
+        <div class="artigo">Artigo</div>
+        <div class="artigo">Artigo</div>
+      </div>
+
+      <footer class="rodape">Rodapé</footer>
+    </div>
+
+    <aside class="menu-lateral">Menu</aside>
+  </div>
+
+</body>
+</html>
